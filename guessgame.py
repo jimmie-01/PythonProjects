@@ -3,6 +3,7 @@ import math
 
 upper_limit = int(input("Enter guess upper limit: "))
 
+
 if upper_limit <= 0:
     print("Enter positive integer greater than 0")
     quit()
@@ -15,24 +16,22 @@ print(f"You have only {chances} tries to guess the number")
 tries = 0
 
 while chances:
+    chances -= 1
     user_guess = int(input("Guess the number>>> "))
+    tries += 1
+    
     if type(user_guess) != int:
         print("Enter an integer next time!")
         continue
     
     if user_guess > cpu_guess:
         print("Try again!, you guessed too high")
-        chances -= 1
-        tries += 1
     elif user_guess < cpu_guess:
         print("Try again!, you guessed to low")
-        chances -= 1
-        tries += 1
     else:
-        tries += 1
         print(f"Nice!!, You got it after {tries} tries")
         quit()
 
-print("Sorry!, you couldn't guess the right number")
+print(f"Sorry!, you couldn't guess the right number, the number is {cpu_guess}")
 quit()
      
