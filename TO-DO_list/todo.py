@@ -7,6 +7,7 @@ def create_parser():
     parser.add_argument("-a", "--add", metavar="", help="Add a new task")
     parser.add_argument("-l", "--list", metavar="store_true", help="List all tasks")
     parser.add_argument("-r", "--remove", metavar="", help="Remove task by index")
+    return parser
 
 def add_task(task):
 
